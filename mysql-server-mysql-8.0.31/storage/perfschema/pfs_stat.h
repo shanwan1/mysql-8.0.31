@@ -51,10 +51,13 @@ struct PFS_builtin_memory_class;
 struct PFS_single_stat {
   /** Count of values. */
   ulonglong m_count;
+  char pad0[56];  //avoid false sharing
   /** Sum of values. */
   ulonglong m_sum;
+  char pad1[56];  //avoid false sharing
   /** Minimum value. */
   ulonglong m_min;
+  char pad2[56];  //avoid false sharing
   /** Maximum value. */
   ulonglong m_max;
 
